@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private SpeechManager mSpeechManager;
 
-    static final String TAG = "yangyong";
+    public static final String TAG = "yangyong";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

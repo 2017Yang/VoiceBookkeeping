@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.example.speechdemo.JsonParser;
 import com.example.speechdemo.MainActivity;
+import com.example.speechdemo.data.DataManagement;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.RecognizerResult;
@@ -30,9 +31,12 @@ public class SpeechManager {
     private IShowSpeechResult mIShowSpeech;
     private HashMap<String, String> mIatResults = new LinkedHashMap();
 
+    private DataManagement mDataManagement;
+
     public SpeechManager(Context context, IShowSpeechResult callback) {
         this.mContext = context;
         this.mIShowSpeech = callback;
+        mDataManagement = new DataManagement(callback);
     }
 
     public void initSpeech() {
@@ -94,17 +98,20 @@ public class SpeechManager {
             for (String key : mIatResults.keySet()) {
                 resultBuffer.append(mIatResults .get(key));
             }
-            mIShowSpeech.onShowSuccess(resultBuffer.toString());
 
-        //    et_input.setText();// 设置输入框的文本
-         //   et_input .setSelection(et_input.length()) ;//把光标定位末尾
+            String strResult = resultBuffer.toString();
+            if (!strResult.contains("元") ) {
+                mIShowSpeech.onShowError();
+            } else {
+                mIShowSpeech.onShowSuccess(resultBuffer.toString());
+                mDataManagement.parseVoice(resultBuffer.toString());
+            }
             // 在界面显示输入的内容
             // 解析存入数据库,
         }
         @Override
         public void onError(SpeechError speechError) {}
     }
-
 
 
 }
