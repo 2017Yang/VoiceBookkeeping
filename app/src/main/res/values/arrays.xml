@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="permissions">
+        <item>@string/permission_recode_audio_hint</item>
+        <item>@string/permission_get_accounts_hint</item>
+        <item>@string/permission_read_phone_hint</item>
+        <item>@string/permission_call_phone_hint</item>
+        <item>@string/permission_camera_hint</item>
+        <item>@string/permission_access_fine_location_hint</item>
+        <item>@string/permission_access_coarse_location_hint</item>
+        <item>@string/permission_read_external_hint</item>
+        <item>@string/permission_white_external_hint</item>
+    </string-array>
+
+    <declare-styleable name="zqxchart_line">
+        <!-- 坐标系颜色 -->
+        <attr name="lCoordinatesColor" format="color"/>
+        <!-- 折点颜色 -->
+        <attr name="pointColor" format="color"/>
+        <!-- 折点文字颜色 -->
+        <attr name="pointTextColor" format="color"/>
+        <!-- 折点文字尺寸 -->
+        <attr name="pointTextSize" format="integer"/>
+        <!-- 折线颜色 -->
+        <attr name="lineColor" format="color"/>
+        <!-- x轴文字颜色 -->
+        <attr name="lxTextColor" format="color"/>
+        <!-- y轴文字颜色 -->
+        <attr name="lyTextColor" format="color"/>
+        <!-- x轴文字尺寸 -->
+        <attr name="lxTextSize" format="integer"/>
+        <!-- y轴文字尺寸 -->
+        <attr name="lyTextSize" format="integer"/>
+        <!-- x轴刻度点数量 -->
+        <attr name="lxPointCount" format="integer"/>
+        <!-- y轴刻度点数量 -->
+        <attr name="lyPointCount" format="integer"/>
+        <!-- 折线宽度 -->
+        <attr name="line_width" format="float"/>
+        <!-- 折点尺寸 -->
+        <attr name="point_size" format="float"/>
+        <!-- 折线样式是否闭合 -->
+        <attr name="lPathStyle">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="zqxchart_pie">
+        <!-- 间隔角度 -->
+        <attr name="separationDegree" format="integer"/>
+        <!-- 文字颜色 -->
+        <attr name="textSize" format="integer"/>
+        <!-- 文字颜色 -->
+        <attr name="textColor" format="color"/>
+        <!-- 动画效果 -->
+        <attr name="panimType">
+            <enum name="NONE" value="-1"></enum>
+            <!--enum name="TRANSLATE" value="0"></enum-->
+            <enum name="ALPHA" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+</resources>
